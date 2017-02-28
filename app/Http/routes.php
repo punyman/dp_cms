@@ -27,6 +27,7 @@ Route::group(['middleware' => 'web'], function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
         Route::get('/', 'PagesController@dashboard');
+        Route::get('/home', 'PagesController@dashboard');
         Route::get('users/data', 'UsersController@anyData')->name('users.data');
         Route::get('users/taskdata/{id}', 'UsersController@taskData')->name('users.taskdata');
         Route::get('users/closedtaskdata/{id}', 'UsersController@closedTaskData')->name('users.closedtaskdata');
